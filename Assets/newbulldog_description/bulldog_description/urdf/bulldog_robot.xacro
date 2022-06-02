@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="bulldog_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="laser_enabled" default="false" />
+  <xacro:arg name="ur5_enabled" default="false" />
+
+  <xacro:include filename="$(find bulldog_description)/urdf/bulldog/bulldog.urdf.xacro" />
+  <xacro:include filename="$(find bulldog_description)/urdf/accessories/plates.urdf.xacro" />
+  <xacro:include filename="$(find kinova_description)/urdf/bulldog_j2s6s300.xacro" />
+  <xacro:bulldog_robot />
+
+</robot>

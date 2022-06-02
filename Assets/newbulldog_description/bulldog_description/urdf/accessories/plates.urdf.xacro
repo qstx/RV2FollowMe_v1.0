@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot name="bulldog_plates" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="installation_plate">
+    <link name="installation_plate_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bulldog_description/meshes/installation_plate.stl" />
+        </geometry>
+        <material name="black" />
+      </visual>
+    </link>
+    <gazebo reference="installation_plate_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+    <joint name="installation_plate_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="installation_plate_link"/>
+      <origin xyz="0.197 0 0.314" rpy="0 0 0" />
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="laser_plate">
+    <link name="laser_plate_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://bulldog_description/meshes/laser_plate.stl" />
+        </geometry>
+        <material name="black" />
+      </visual>
+    </link>
+    <gazebo reference="laser_plate_link">
+      <material>Gazebo/FlatBlack</material>
+    </gazebo>
+    <joint name="laser_plate_joint" type="fixed">
+      <parent link="installation_plate_link"/>
+      <child link="laser_plate_link"/>
+      <origin xyz="0 0 0.005" rpy="0 0 0" />
+    </joint>
+  </xacro:macro>
+</robot>

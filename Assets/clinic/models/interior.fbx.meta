@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 593781111178cc24b93f0f9885efe3bf
+timeCreated: 1496534765
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: door_1
+    100002: door_1.L
+    100004: door_1.R
+    100006: //RootNode
+    100008: interior
+    100010: jalousie_1
+    100012: jalousie_2
+    100014: shadow
+    100016: window_1
+    100018: window_1.001
+    100020: window_1.002
+    100022: window_open_1
+    100024: window_open_1.001
+    100026: window_open_1.002
+    100028: ceiling
+    100030: interior.002
+    100032: window_2
+    100034: window_3
+    100036: window_open_2
+    100038: window_open_3
+    100040: lamp
+    400000: door_1
+    400002: door_1.L
+    400004: door_1.R
+    400006: interior
+    400008: //RootNode
+    400010: jalousie_1
+    400012: jalousie_2
+    400014: shadow
+    400016: window_1
+    400018: window_1.001
+    400020: window_1.002
+    400022: window_open_1
+    400024: window_open_1.001
+    400026: window_open_1.002
+    400028: ceiling
+    400030: interior.002
+    400032: window_2
+    400034: window_3
+    400036: window_open_2
+    400038: window_open_3
+    400040: lamp
+    2300000: door_1
+    2300002: door_1.L
+    2300004: door_1.R
+    2300006: interior
+    2300008: jalousie_1
+    2300010: jalousie_2
+    2300012: shadow
+    2300014: window_1
+    2300016: window_1.001
+    2300018: window_1.002
+    2300020: window_open_1
+    2300022: window_open_1.001
+    2300024: window_open_1.002
+    2300026: ceiling
+    2300028: interior.002
+    2300030: window_2
+    2300032: window_3
+    2300034: window_open_2
+    2300036: window_open_3
+    2300038: lamp
+    3300000: door_1
+    3300002: door_1.L
+    3300004: door_1.R
+    3300006: interior
+    3300008: jalousie_1
+    3300010: jalousie_2
+    3300012: shadow
+    3300014: window_1
+    3300016: window_1.001
+    3300018: window_1.002
+    3300020: window_open_1
+    3300022: window_open_1.001
+    3300024: window_open_1.002
+    3300026: ceiling
+    3300028: interior.002
+    3300030: window_2
+    3300032: window_3
+    3300034: window_open_2
+    3300036: window_open_3
+    3300038: lamp
+    4300000: window_open_1.002
+    4300002: window_1.001
+    4300004: window_1.002
+    4300006: window_open_1.001
+    4300008: jalousie_2
+    4300010: shadow
+    4300012: jalousie_1
+    4300014: window_open_1
+    4300016: window_1
+    4300018: door_1
+    4300020: door_1.R
+    4300022: door_1.L
+    4300024: interior
+    4300026: interior.002
+    4300028: ceiling
+    4300030: window_open_3
+    4300032: window_2
+    4300034: window_3
+    4300036: window_open_2
+    4300038: lamp
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

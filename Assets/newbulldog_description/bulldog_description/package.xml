@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <name>bulldog_description</name>
+  <version>2.0.0</version>
+  <description>bulldog URDF</description>
+
+  <author email="956473807@qq.com">Shawn Ma</author>
+  <maintainer email="956473807@qq.com">Shawn Ma</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+
+</package>

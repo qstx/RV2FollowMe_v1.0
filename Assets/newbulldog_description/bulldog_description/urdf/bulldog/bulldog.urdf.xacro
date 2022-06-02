@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<robot name="bulldog_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find bulldog_description)/urdf/bulldog/wheel.urdf.xacro" />
+  <xacro:include filename="$(find bulldog_description)/urdf/bulldog/materials.xacro" />
+  <xacro:include filename="$(find kinova_description)/urdf/bulldog_j2s6s300.xacro" />
+  <!--xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+  <xacro:include filename="$(find lms1xx)/urdf/sick_lms1xx.urdf.xacro" /-->
+
+  <xacro:property name="M_PI" value="3.141592654"/>
+  <xacro:property name="wheel_length" value="0.142" />
+  <xacro:property name="wheel_radius" value="0.183" />
+
+  <property name="base_x_size" value="0.85" />
+  <property name="base_y_size" value="0.42" />
+  <property name="base_z_size" value="0.325" />
+
+  <xacro:macro name="bulldog_robot">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="${M_PI/2} 0 ${M_PI}" />
+      <geometry>
+        <mesh filename="package://bulldog_description/meshes/base_link.stl" />
+      </geometry>
+      <material name="flat_black" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${base_z_size/2.0}" rpy="${M_PI/2} 0 0" />
+      <geometry>
+        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+
+  <link name="inertial_link">
+    <inertial>
+      <mass value="40" />
+      <origin xyz="0 0 0.1" />
+      <inertia ixx="0.7" ixy="-0.03" ixz="-0.15" iyy="2" iyz="-0.01" izz="4" />
+    </inertial>
+  </link>
+  <joint name="inertial_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="inertial_link" />
+  </joint>
+
+  <link name="top_plate_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://bulldog_description/meshes/top_plate.stl" />
+      </geometry>
+      <material name="grey" />
+    </visual>
+  </link>
+  <gazebo reference="top_plate_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <joint name="top_plate_joint" type="fixed">
+    <origin xyz="0.07937 0 0.253" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="top_plate_link" />
+  </joint>
+
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+  <gazebo reference="imu_link" />
+
+  <link name="motor1_link">
+    <visual>
+    <origin xyz="0 0 0" rpy="${M_PI} 0 ${M_PI/2}" />
+    <geometry>
+      <mesh filename="package://bulldog_description/meshes/motor1_link.stl" />
+    </geometry>
+    <material name="grey" />
+  </visual>
+  </link>
+  <joint name="motor1_joint" type="revolute">
+    <origin xyz="0.21 0 0.188" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="motor1_link" />
+    <axis xyz="0 0 1" rpy="0 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="0.5"/>
+  </joint>
+  <gazebo reference="motor1_link" />
+
+  <link name="motor2_link">
+    <visual>
+    <origin xyz="-0.016 0 -0.212" rpy="${M_PI} 0 ${M_PI/2}" />
+    <geometry>
+      <mesh filename="package://bulldog_description/meshes/motor2_link.stl" />
+    </geometry>
+    <material name="grey" />
+  </visual>
+  </link> 
+  <joint name="motor2_joint" type="revolute">
+    <origin xyz="0 0 0.212" rpy="0 0 0" />
+    <parent link="motor1_link" />
+    <child link="motor2_link" />
+    <axis xyz="0 1 0" rpy="0 0 0" />
+    <limit lower="-2.0" upper="2.0" effort="100" velocity="0.5"/>
+  </joint>
+  <gazebo reference="motor2_link" />
+
+  <link name="motor3_link">
+    <visual>
+    <origin xyz="0 0 -0.4485" rpy="${M_PI} 0 ${M_PI/2}" />
+    <geometry>
+      <mesh filename="package://bulldog_description/meshes/motor3_link.stl" />
+    </geometry>
+    <material name="grey" />
+  </visual>
+  </link>
+  <joint name="motor3_joint" type="prismatic">
+    <origin xyz="0 0 0.2365" rpy="0 0 0" />
+    <parent link="motor2_link" />
+    <child link="motor3_link" />
+    <axis xyz="0 0 1" rpy="0 0 0" />
+    <limit lower="-0.1" upper="0.3" effort="100" velocity="0.5"/>
+  </joint>
+  <gazebo reference="motor3_link" />
+
+  <xacro:bulldog_wheel wheel_prefix="front_left">
+    <origin xyz="0.27937 0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="front_right">
+    <origin xyz="0.27937 -0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="rear_left">
+    <origin xyz="-0.27937 0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  <xacro:bulldog_wheel wheel_prefix="rear_right">
+    <origin xyz="-0.27937 -0.285 0.0435" rpy="0 0 0" />
+  </xacro:bulldog_wheel>
+  
+  <xacro:j2s6s300 prefix="left_arm" left="true"/>
+  <joint name="left_arm_joint" type="fixed">
+    <parent link="motor3_link" />
+    <child link="left_arm_link_base" />
+    <origin xyz="0 0.0625 0.334" rpy="-${M_PI/2} 0 0" />
+  </joint>
+  <link name="left_camera_link">
+    <visual>
+      <origin xyz="0.03 -0.02 0" rpy="${M_PI/2} 0 ${M_PI/2}" />
+      <geometry>
+        <mesh filename="package://bulldog_description/meshes/camera.stl" />
+      </geometry>
+      <material name="grey" />
+    </visual>
+  </link>
+  <joint name="left_camera_joint" type="fixed">
+    <origin xyz="-0.02 0.108 0.065" rpy="0 0 ${M_PI/2}" />
+    <parent link="left_arm_link_5" />
+    <child link="left_camera_link" />
+  </joint>
+  <gazebo reference="left_camera_link" />
+
+  <xacro:j2s6s300 prefix="right_arm" left="false"/>
+  <joint name="right_arm_joint" type="fixed">
+    <parent link="motor3_link" />
+    <child link="right_arm_link_base" />
+    <origin xyz="0 -0.0625 0.334" rpy="${M_PI/2} ${M_PI} 0" />
+  </joint>
+
+  <link name="right_camera_link">
+    <visual>
+      <origin xyz="0.03 -0.02 0" rpy="${M_PI/2} 0 ${M_PI/2}" />
+      <geometry>
+        <mesh filename="package://bulldog_description/meshes/camera.stl" />
+      </geometry>
+      <material name="grey" />
+    </visual>
+  </link>
+  <joint name="right_camera_joint" type="fixed">
+    <origin xyz="0.02 0.108 -0.065" rpy="${M_PI} 0 ${M_PI/2}" />
+    <parent link="right_arm_link_5" />
+    <child link="right_camera_link" />
+  </joint>
+  <gazebo reference="right_camera_link" />
+
+  <link name="mid_camera_link"/>
+  <joint name="mid_camera_joint" type="fixed">
+    <origin xyz="0.10945 0.02 0.3695" rpy="0 0 0" />
+    <parent link="motor3_link" />
+    <child link="mid_camera_link" />
+  </joint>
+  <gazebo reference="mid_camera_link" />
+
+  <link name="laser"/>
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0.4689 0 0.17672" rpy="0 0 ${M_PI}" />
+    <parent link="base_link" />
+    <child link="laser" />
+  </joint>
+  <gazebo reference="laser" />
+
+
+  <!-- <xacro:installation_plate /> -->
+ <!--
+  <link name="pandar">
+    <visual>
+      <geometry>
+        <cylinder length="0.13" radius="0.05"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0 0 0 0.3"/>
+      </material>
+    </visual>
+  </link> 
+  -->
+
+  <!-- 
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0 0 0.30" rpy="0 0 0" />
+    <parent link="installation_plate_link" />
+    <child link="pandar" />
+  </joint>
+
+   <link name="GPS_link"/>
+  <joint name="gps_joint" type="fixed">
+    <origin xyz="-0.1 0 0.05" rpy="0 0 0" />
+    <parent link="installation_plate_link" />
+    <child link="GPS_link" />
+  </joint>
+  -->
+
+  <!--xacro:if value="$(arg ur5_enabled)">
+    <xacro:installation_plate />
+    <xacro:ur5_robot prefix="ur5_arm_" joint_limited="true"/>
+    <joint name="ur5_arm_base" type="fixed">
+      <parent link="installation_plate_link" />
+      <child link="ur5_arm_base_link" />
+      <origin xyz="0 0 0.005" rpy="0 0 0" />
+    </joint>
+  </xacro:if>
+
+  <xacro:if value="$(arg laser_enabled)">
+    <xacro:installation_plate />
+    <xacro:laser_plate />
+    <sick_lms1xx frame="laser_link" topic="scan"/>
+    <joint name="laser_mount_joint" type="fixed">
+      <origin xyz="0.015 0 0.044" rpy="${M_PI} 0 0" />
+      <parent link="laser_plate_link" />
+      <child link="laser_link" />
+    </joint>
+  </xacro:if-->
+
+  </xacro:macro>
+</robot>

@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 4dfea3296b03d1a469ae1116242a62d6
+timeCreated: 1496695105
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: body
+    100002: cover
+    100004: muscles
+    100006: python_appendicitis-highpolyeyes
+    100008: skin
+    100010: //RootNode
+    100012: surgical_bed
+    100014: surgical_bed.001
+    100016: surgical_bed.002
+    100018: eyes
+    100020: surgical_bed_1
+    100022: surgical_bed_2
+    400000: body
+    400002: cover
+    400004: muscles
+    400006: python_appendicitis-highpolyeyes
+    400008: skin
+    400010: //RootNode
+    400012: surgical_bed
+    400014: surgical_bed.001
+    400016: surgical_bed.002
+    400018: eyes
+    400020: surgical_bed_1
+    400022: surgical_bed_2
+    2300000: body
+    2300002: cover
+    2300004: python_appendicitis-highpolyeyes
+    2300006: surgical_bed
+    2300008: surgical_bed.001
+    2300010: surgical_bed.002
+    2300012: eyes
+    2300014: surgical_bed_1
+    2300016: surgical_bed_2
+    3300000: body
+    3300002: cover
+    3300004: python_appendicitis-highpolyeyes
+    3300006: surgical_bed
+    3300008: surgical_bed.001
+    3300010: surgical_bed.002
+    3300012: eyes
+    3300014: surgical_bed_1
+    3300016: surgical_bed_2
+    4300000: surgical_bed.002
+    4300002: surgical_bed.001
+    4300004: muscles
+    4300006: cover
+    4300008: surgical_bed
+    4300010: body
+    4300012: python_appendicitis-highpolyeyes
+    4300014: skin
+    4300016: surgical_bed_2
+    4300018: surgical_bed_1
+    4300020: eyes
+    9500000: //RootNode
+    13700000: muscles
+    13700002: skin
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
